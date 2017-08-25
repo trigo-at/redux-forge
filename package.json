@@ -1,0 +1,31 @@
+{
+  "name": "redux-forge",
+  "version": "1.0.0",
+  "main": "forge.cjs.js",
+  "module": "forge.js",
+  "repository": "git@github.com:trigo-at/redux-forge.git",
+  "author": "David Wippel <david@trigo.at>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint \"**/*.{js,jsx}\"",
+    "test": "jest --no-watchman --setupTestFrameworkScriptFile=./jest.setup.js",
+    "precommit": "lint-staged",
+    "prepare": "rollup --input forge.js --output.file forge.cjs.js --output.format cjs"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write --single-quote --trailing-comma es5 --jsx-bracket-same-line --parser flow --tab-width 4 --no-bracket-spacing",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-config-trigo": "^4.2.4",
+    "eslint-plugin-prettier": "^2.2.0",
+    "husky": "^0.14.3",
+    "jest": "^20.0.4",
+    "lint-staged": "^4.0.4",
+    "prettier": "^1.5.3",
+    "rollup": "^0.48.2"
+  }
+}

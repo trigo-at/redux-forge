@@ -1,0 +1,33 @@
+{
+    "extends": [
+        "trigo",
+        "prettier"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "env": {
+        "browser": true,
+		"jest": true
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-console": 0,
+        "no-underscore-dangle": 0,
+		"no-confusing-arrow": 0,
+		"no-underscore-dangle": 0,
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true,
+                "trailingComma": "es5",
+                "bracketSpacing": false,
+                "jsxBracketSameLine": true,
+                "parser": "flow",
+                "tabWidth": 4
+            }
+        ]
+    }
+}
