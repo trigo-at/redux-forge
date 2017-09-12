@@ -1,29 +1,26 @@
-import {forge, actionCreatorFactory, createMiddleware} from './forge';
+const {forge, actionCreatorFactory, createMiddleware} = require('./forge.cjs');
 
 const handler = {
     getRequest: {
         next(state, action) {
-            return {
-                ...state,
+            return Object.assign({}, state, {
                 payload: action.payload,
                 meta: action.meta,
-            };
+            });
         },
     },
     get: {
         next(state, action) {
-            return {
-                ...state,
+            return Object.assign({}, state, {
                 payload: action.payload,
                 meta: action.meta,
-            };
+            });
         },
         throw(state, action) {
-            return {
-                ...state,
+            return Object.assign({}, state, {
                 payload: action.payload,
                 meta: action.meta,
-            };
+            });
         },
     },
 };
@@ -91,4 +88,12 @@ test('forge/middleware', () => {
         meta: {meta: 4},
     });
     expect(drink).toHaveBeenCalled();
+});
+
+test('forge/should throw on invalid name', () => {
+    expect(() => {
+        forge('demo/demo2', handler, {});
+    }).toThrowError(
+        '"/" not allowed in "name". Its used as namespace separator.'
+    );
 });

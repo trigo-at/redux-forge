@@ -19,6 +19,11 @@ const errorAware = (handler, state, action) => {
 };
 
 export const forge = (name, handlers, initialState = {}) => {
+    if (name.includes('/')) {
+        throw Error(
+            '"/" not allowed in "name". Its used as namespace separator.'
+        );
+    }
     const actions = Object.keys(handlers).reduce(
         (acc, key) =>
             Object.assign(acc, {[key]: actionCreatorFactory(`${name}/${key}`)}),
