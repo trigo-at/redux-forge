@@ -57,3 +57,5 @@ export const createMiddleware = (
     }
     next(action);
 };
+
+export * from './default-reducer';
