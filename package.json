@@ -27,5 +27,8 @@
         "lint-staged": "^4.2.1",
         "prettier": "^1.7.0",
         "rollup": "^0.50.0"
+    },
+    "dependencies": {
+        "ramda": "^0.24.1"
     }
 }
