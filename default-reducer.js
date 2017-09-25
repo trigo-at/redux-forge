@@ -11,7 +11,7 @@ export const requestReducer = {
     },
 };
 
-export const transformResponseReducer = (transform = identity) => {
+export const transformResponseReducer = transform => {
     return {
         next(state, action) {
             return Object.assign({}, state, {
@@ -32,4 +32,4 @@ export const transformResponseReducer = (transform = identity) => {
     };
 };
 
-export const responseReducer = transformResponseReducer();
+export const responseReducer = transformResponseReducer(identity);
