@@ -11,11 +11,11 @@ export const requestReducer = {
     },
 };
 
-export const transformResponseReducer = transform => {
+export const transformResponseReducer = (transform = identity) => {
     return {
         next(state, action) {
             return Object.assign({}, state, {
-                response: action.payload,
+                response: transform(action.payload),
                 isLoading: false,
                 hasLoaded: true,
                 error: false,
@@ -26,10 +26,10 @@ export const transformResponseReducer = transform => {
                 isLoading: false,
                 hasLoaded: false,
                 error: true,
-                response: transform(action.payload),
+                response: action.payload,
             });
         },
     };
 };
 
-export const responseReducer = transformResponseReducer(identity);
+export const responseReducer = transformResponseReducer();
