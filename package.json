@@ -10,7 +10,7 @@
         "lint": "eslint \"**/*.{js,jsx}\"",
         "test": "npm run prepare && jest --no-watchman --setupTestFrameworkScriptFile=./jest.setup.js",
         "precommit": "lint-staged",
-        "prepare": "rollup --input forge.js --output.file forge.cjs.js --output.format cjs"
+        "prepare": "rollup -c"
     },
     "lint-staged": {
         "*.{js,jsx}": [
