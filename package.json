@@ -9,12 +9,13 @@
     "scripts": {
         "lint": "eslint \"**/*.{js,jsx}\"",
         "test": "npm run prepare && jest --no-watchman --setupTestFrameworkScriptFile=./jest.setup.js",
+        "prettify": "prettier --write '**/*.{js,jsx}'",
         "precommit": "lint-staged",
         "prepare": "rollup -c"
     },
     "lint-staged": {
         "*.{js,jsx}": [
-            "prettier --write --single-quote --trailing-comma es5 --jsx-bracket-same-line --parser flow --tab-width 4 --no-bracket-spacing",
+            "prettier --write",
             "git add"
         ]
     },
