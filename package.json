@@ -1,6 +1,6 @@
 {
     "name": "redux-forge",
-    "version": "2.5.0",
+    "version": "2.5.1",
     "main": "forge.cjs.js",
     "module": "forge.esm.js",
     "repository": "git@github.com:trigo-at/redux-forge.git",
