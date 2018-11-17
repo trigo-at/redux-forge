@@ -1,33 +1,37 @@
 {
-    "name": "redux-forge",
-    "version": "2.5.1",
-    "main": "forge.cjs.js",
-    "module": "forge.esm.js",
-    "repository": "git@github.com:trigo-at/redux-forge.git",
-    "author": "David Wippel <david@trigo.at>",
-    "license": "MIT",
-    "scripts": {
-        "lint": "eslint \"**/*.{js,jsx}\"",
-        "test": "npm run prepare && jest --no-watchman --setupTestFrameworkScriptFile=./jest.setup.js",
-        "prettify": "prettier --write '**/*.{js,jsx}'",
-        "precommit": "lint-staged",
-        "prepare": "rollup -c"
-    },
-    "lint-staged": {
-        "*.{js,jsx}": [
-            "prettier --write",
-            "git add"
-        ]
-    },
-    "devDependencies": {
-        "eslint-config-prettier": "^3.3.0",
-        "eslint-config-trigo": "^6.2.0",
-        "eslint-plugin-prettier": "^3.0.0",
-        "husky": "^1.1.4",
-        "jest": "^23.6.0",
-        "lint-staged": "^8.0.5",
-        "prettier": "^1.15.2",
-        "rollup": "^0.67.3"
-    },
-    "dependencies": {}
+  "name": "redux-forge",
+  "version": "2.5.1",
+  "main": "forge.cjs.js",
+  "module": "forge.esm.js",
+  "repository": "git@github.com:trigo-at/redux-forge.git",
+  "author": "David Wippel <david@trigo.at>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint \"**/*.{js,jsx}\"",
+    "test": "npm run prepare && jest --no-watchman --setupTestFrameworkScriptFile=./jest.setup.js",
+    "prettify": "prettier --write '**/*.{js,jsx}'",
+    "prepare": "rollup -c"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-trigo": "^6.2.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.1.4",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.0.5",
+    "prettier": "^1.15.2",
+    "rollup": "^0.67.3"
+  },
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
